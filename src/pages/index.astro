@@ -9,15 +9,9 @@ import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
-import { ImportsNotUsedAsValues } from 'typescript';
-import { Image } from 'astro:assets';
-import heroImage from '../assets/alexanderguenther_alleine_keinhintergrund_gebauegt.webp';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('repertoire'))
@@ -61,7 +55,7 @@ const anstehendeTermine = (await getCollection('termine'))
 					<img
 						alt="Alexander Günther lächelnd leicht gebäugt"
 						width="350"
-						src={heroImage.src}
+						src='assets/alexanderguenther_alleine_keinhintergrund_gebauegt.webp'
 					/>
 					<!-- Info-Icon in der rechten unteren Ecke -->
 					<span class="info-icon">
