@@ -41,5 +41,6 @@ show_preview_links: false
 editor:
      preview: false
 backend:
-  name: git-gateway
+  name: github
   branch: main # Branch to update (optional; defaults to master)
+  base_url: https://alexanderguenther.com
