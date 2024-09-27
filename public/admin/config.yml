@@ -42,7 +42,7 @@ editor:
      preview: false
 backend:
   name: github
-  repo: alexander-guenther/website-new
+  repo: "alexander-guenther/website-new"
   branch: main # Branch to update (optional; defaults to master)
   base_url: https://alexanderguenther.com
   auth_endpoint: /api/auth
