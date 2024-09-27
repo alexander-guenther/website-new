@@ -1,0 +1,42 @@
+{
+  "$ref": "#/definitions/termine",
+  "definitions": {
+    "termine": {
+      "type": "object",
+      "properties": {
+        "datum": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "vorstellung": {
+          "type": "string"
+        },
+        "rolle": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "datum",
+        "vorstellung",
+        "rolle"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

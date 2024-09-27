@@ -17,6 +17,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 import { ImportsNotUsedAsValues } from 'typescript';
 import { Image } from 'astro:assets';
+import heroImage from '../../src/assets/AlexanderGuenther_Alleine_KeinHintergrund_Gebauegt.webp';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('repertoire'))
@@ -60,7 +61,7 @@ const anstehendeTermine = (await getCollection('termine'))
 					<img
 						alt="Alexander Günther lächelnd leicht gebäugt"
 						width="350"
-						src="/assets/AlexanderGuenther_Alleine_KeinHintergrund_Gebauegt.webp"
+						src={heroImage.src}
 					/>
 					<!-- Info-Icon in der rechten unteren Ecke -->
 					<span class="info-icon">
@@ -160,7 +161,7 @@ const anstehendeTermine = (await getCollection('termine'))
 						<img
 						alt="Logo Deutsches Nationaltheater Weimar"
 						width="100"
-						src="/assets/dnt-logo.png"
+						src="src/assets/dnt-logo.png"
 					/></div>
 					<CallToAction href="https://www.nationaltheater-weimar.de/de/ueber-uns/ensemble-detail.php?PID=86">
 						Mein Profil am DNT

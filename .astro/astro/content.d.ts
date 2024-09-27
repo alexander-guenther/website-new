@@ -1,0 +1,467 @@
+declare module 'astro:content' {
+	interface RenderResult {
+		Content: import('astro/runtime/server/index.js').AstroComponentFactory;
+		headings: import('astro').MarkdownHeading[];
+		remarkPluginFrontmatter: Record<string, any>;
+	}
+	interface Render {
+		'.md': Promise<RenderResult>;
+	}
+
+	export interface RenderedContent {
+		html: string;
+		metadata?: {
+			imagePaths: Array<string>;
+			[key: string]: unknown;
+		};
+	}
+}
+
+declare module 'astro:content' {
+	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
+
+	export type CollectionKey = keyof AnyEntryMap;
+	export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;
+
+	export type ContentCollectionKey = keyof ContentEntryMap;
+	export type DataCollectionKey = keyof DataEntryMap;
+
+	type AllValuesOf<T> = T extends any ? T[keyof T] : never;
+	type ValidContentEntrySlug<C extends keyof ContentEntryMap> = AllValuesOf<
+		ContentEntryMap[C]
+	>['slug'];
+
+	/** @deprecated Use `getEntry` instead. */
+	export function getEntryBySlug<
+		C extends keyof ContentEntryMap,
+		E extends ValidContentEntrySlug<C> | (string & {}),
+	>(
+		collection: C,
+		// Note that this has to accept a regular string too, for SSR
+		entrySlug: E,
+	): E extends ValidContentEntrySlug<C>
+		? Promise<CollectionEntry<C>>
+		: Promise<CollectionEntry<C> | undefined>;
+
+	/** @deprecated Use `getEntry` instead. */
+	export function getDataEntryById<C extends keyof DataEntryMap, E extends keyof DataEntryMap[C]>(
+		collection: C,
+		entryId: E,
+	): Promise<CollectionEntry<C>>;
+
+	export function getCollection<C extends keyof AnyEntryMap, E extends CollectionEntry<C>>(
+		collection: C,
+		filter?: (entry: CollectionEntry<C>) => entry is E,
+	): Promise<E[]>;
+	export function getCollection<C extends keyof AnyEntryMap>(
+		collection: C,
+		filter?: (entry: CollectionEntry<C>) => unknown,
+	): Promise<CollectionEntry<C>[]>;
+
+	export function getEntry<
+		C extends keyof ContentEntryMap,
+		E extends ValidContentEntrySlug<C> | (string & {}),
+	>(entry: {
+		collection: C;
+		slug: E;
+	}): E extends ValidContentEntrySlug<C>
+		? Promise<CollectionEntry<C>>
+		: Promise<CollectionEntry<C> | undefined>;
+	export function getEntry<
+		C extends keyof DataEntryMap,
+		E extends keyof DataEntryMap[C] | (string & {}),
+	>(entry: {
+		collection: C;
+		id: E;
+	}): E extends keyof DataEntryMap[C]
+		? Promise<DataEntryMap[C][E]>
+		: Promise<CollectionEntry<C> | undefined>;
+	export function getEntry<
+		C extends keyof ContentEntryMap,
+		E extends ValidContentEntrySlug<C> | (string & {}),
+	>(
+		collection: C,
+		slug: E,
+	): E extends ValidContentEntrySlug<C>
+		? Promise<CollectionEntry<C>>
+		: Promise<CollectionEntry<C> | undefined>;
+	export function getEntry<
+		C extends keyof DataEntryMap,
+		E extends keyof DataEntryMap[C] | (string & {}),
+	>(
+		collection: C,
+		id: E,
+	): E extends keyof DataEntryMap[C]
+		? Promise<DataEntryMap[C][E]>
+		: Promise<CollectionEntry<C> | undefined>;
+
+	/** Resolve an array of entry references from the same collection */
+	export function getEntries<C extends keyof ContentEntryMap>(
+		entries: {
+			collection: C;
+			slug: ValidContentEntrySlug<C>;
+		}[],
+	): Promise<CollectionEntry<C>[]>;
+	export function getEntries<C extends keyof DataEntryMap>(
+		entries: {
+			collection: C;
+			id: keyof DataEntryMap[C];
+		}[],
+	): Promise<CollectionEntry<C>[]>;
+
+	export function render<C extends keyof AnyEntryMap>(
+		entry: AnyEntryMap[C][string],
+	): Promise<RenderResult>;
+
+	export function reference<C extends keyof AnyEntryMap>(
+		collection: C,
+	): import('astro/zod').ZodEffects<
+		import('astro/zod').ZodString,
+		C extends keyof ContentEntryMap
+			? {
+					collection: C;
+					slug: ValidContentEntrySlug<C>;
+				}
+			: {
+					collection: C;
+					id: keyof DataEntryMap[C];
+				}
+	>;
+	// Allow generic `string` to avoid excessive type errors in the config
+	// if `dev` is not running to update as you edit.
+	// Invalid collection names will be caught at build time.
+	export function reference<C extends string>(
+		collection: C,
+	): import('astro/zod').ZodEffects<import('astro/zod').ZodString, never>;
+
+	type ReturnTypeOrOriginal<T> = T extends (...args: any[]) => infer R ? R : T;
+	type InferEntrySchema<C extends keyof AnyEntryMap> = import('astro/zod').infer<
+		ReturnTypeOrOriginal<Required<ContentConfig['collections'][C]>['schema']>
+	>;
+
+	type ContentEntryMap = {
+		"repertoire": {
+"Konzert.md": {
+	id: "Konzert.md";
+  slug: "konzert";
+  body: string;
+  collection: "repertoire";
+  data: InferEntrySchema<"repertoire">
+} & { render(): Render[".md"] };
+"Liederzyklen.md": {
+	id: "Liederzyklen.md";
+  slug: "liederzyklen";
+  body: string;
+  collection: "repertoire";
+  data: InferEntrySchema<"repertoire">
+} & { render(): Render[".md"] };
+"Oper.md": {
+	id: "Oper.md";
+  slug: "oper";
+  body: string;
+  collection: "repertoire";
+  data: InferEntrySchema<"repertoire">
+} & { render(): Render[".md"] };
+"Operette-Musical-Schauspiel.md": {
+	id: "Operette-Musical-Schauspiel.md";
+  slug: "operette-musical-schauspiel";
+  body: string;
+  collection: "repertoire";
+  data: InferEntrySchema<"repertoire">
+} & { render(): Render[".md"] };
+};
+
+	};
+
+	type DataEntryMap = {
+		"fotos": {
+"foto1": {
+	id: "foto1";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"foto2": {
+	id: "foto2";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"foto3": {
+	id: "foto3";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-img-src-assets-8019-096-webp-publishdate-2024-09-09t03-29-00-000z-img_alt-mit-krone": {
+	id: "map-img-src-assets-8019-096-webp-publishdate-2024-09-09t03-29-00-000z-img_alt-mit-krone";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-img-src-assets-_35a0050-webp-img_alt-am-boden-publishdate-2024-09-09t03-29-00-000z": {
+	id: "map-img-src-assets-_35a0050-webp-img_alt-am-boden-publishdate-2024-09-09t03-29-00-000z";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-25-00-000z-img-src-assets-img_1606-webp-img_alt-pinker-hintergrund": {
+	id: "map-publishdate-2024-09-09t03-25-00-000z-img-src-assets-img_1606-webp-img_alt-pinker-hintergrund";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-26-00-000z-img-src-assets-can_20220504_110-webp-img_alt-blonde-perücke-weisser-anzug": {
+	id: "map-publishdate-2024-09-09t03-26-00-000z-img-src-assets-can_20220504_110-webp-img_alt-blonde-perücke-weisser-anzug";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-26-00-000z-img-src-assets-can_20220831_133-webp-img_alt-vögelköpfe": {
+	id: "map-publishdate-2024-09-09t03-26-00-000z-img-src-assets-can_20220831_133-webp-img_alt-vögelköpfe";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-26-00-000z-img-src-assets-can_20230712_065-webp-img_alt-weisser-anzug-vor-gruppe": {
+	id: "map-publishdate-2024-09-09t03-26-00-000z-img-src-assets-can_20230712_065-webp-img_alt-weisser-anzug-vor-gruppe";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-27-00-000z-img-src-assets-can20230118_128-webp-img_alt-dunkler-hintergrund": {
+	id: "map-publishdate-2024-09-09t03-27-00-000z-img-src-assets-can20230118_128-webp-img_alt-dunkler-hintergrund";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-27-00-000z-img-src-assets-can_20190906_132-webp-img_alt-pudel": {
+	id: "map-publishdate-2024-09-09t03-27-00-000z-img-src-assets-can_20190906_132-webp-img_alt-pudel";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-28-00-000z-img-src-assets-_dsc9637_dxo-webp-img_alt-einstein": {
+	id: "map-publishdate-2024-09-09t03-28-00-000z-img-src-assets-_dsc9637_dxo-webp-img_alt-einstein";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-28-00-000z-img-src-assets-ar9a9530-webp-img_alt-bemaltes-gesicht-dunkel": {
+	id: "map-publishdate-2024-09-09t03-28-00-000z-img-src-assets-ar9a9530-webp-img_alt-bemaltes-gesicht-dunkel";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+"map-publishdate-2024-09-09t03-28-00-000z-img-src-assets-can20230112_009-webp-img_alt-mit-rucksack": {
+	id: "map-publishdate-2024-09-09t03-28-00-000z-img-src-assets-can20230112_009-webp-img_alt-mit-rucksack";
+  collection: "fotos";
+  data: InferEntrySchema<"fotos">
+};
+};
+"termine": {
+"map-datum-14-09-2024-vorstellung-salomé-rolle-als-herodes": {
+	id: "map-datum-14-09-2024-vorstellung-salomé-rolle-als-herodes";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-09-28t19-00-00-000z-vorstellung-theaterfest-rolle-u-a-als-erzähler-„paddington-bärs-erstes-konzert“": {
+	id: "map-datum-2024-09-28t19-00-00-000z-vorstellung-theaterfest-rolle-u-a-als-erzähler-„paddington-bärs-erstes-konzert“";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-10-04t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins": {
+	id: "map-datum-2024-10-04t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-10-06t19-00-00-000z-vorstellung-salomé-rolle-als-herodes": {
+	id: "map-datum-2024-10-06t19-00-00-000z-vorstellung-salomé-rolle-als-herodes";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-10-11t11-54-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins": {
+	id: "map-datum-2024-10-11t11-54-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-10-18t19-00-00-000z-vorstellung-salomé-rolle-als-herodes": {
+	id: "map-datum-2024-10-18t19-00-00-000z-vorstellung-salomé-rolle-als-herodes";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-10-26t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk": {
+	id: "map-datum-2024-10-26t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-09t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-11-09t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-10t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk": {
+	id: "map-datum-2024-11-10t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-12t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-11-12t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-15t11-54-00-000z-vorstellung-salomé-rolle-als-herodes": {
+	id: "map-datum-2024-11-15t11-54-00-000z-vorstellung-salomé-rolle-als-herodes";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-16t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-11-16t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-21t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk": {
+	id: "map-datum-2024-11-21t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-21t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk-1": {
+	id: "map-datum-2024-11-21t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk-1";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-24t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-11-24t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-11-25t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-11-25t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-01t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-12-01t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-02t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-12-02t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-02t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe-1": {
+	id: "map-datum-2024-12-02t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe-1";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-06t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-12-06t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-08t11-54-00-000z-vorstellung-salomé-rolle-als-herodes": {
+	id: "map-datum-2024-12-08t11-54-00-000z-vorstellung-salomé-rolle-als-herodes";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-10t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-12-10t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-18t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-12-18t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-18t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe-1": {
+	id: "map-datum-2024-12-18t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe-1";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-23t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk": {
+	id: "map-datum-2024-12-23t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-26t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2024-12-26t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-28t11-54-00-000z-vorstellung-salomé-rolle-als-herodes": {
+	id: "map-datum-2024-12-28t11-54-00-000z-vorstellung-salomé-rolle-als-herodes";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2024-12-31t19-00-00-000z-vorstellung-dinner-for-one-rolle-als-oberschwester-mühlendonk": {
+	id: "map-datum-2024-12-31t19-00-00-000z-vorstellung-dinner-for-one-rolle-als-oberschwester-mühlendonk";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-01-10t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2025-01-10t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-01-19t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2025-01-19t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-01-25t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe": {
+	id: "map-datum-2025-01-25t19-00-00-000z-vorstellung-hänsel-und-gretel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-03-14t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk": {
+	id: "map-datum-2025-03-14t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-04-05t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann": {
+	id: "map-datum-2025-04-05t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-04-11t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann": {
+	id: "map-datum-2025-04-11t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-04-16t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins": {
+	id: "map-datum-2025-04-16t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-04-25t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann": {
+	id: "map-datum-2025-04-25t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-05-10t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann": {
+	id: "map-datum-2025-05-10t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-05-16t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins": {
+	id: "map-datum-2025-05-16t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-05-23t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann": {
+	id: "map-datum-2025-05-23t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-05-29t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins": {
+	id: "map-datum-2025-05-29t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-06-05t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins": {
+	id: "map-datum-2025-06-05t19-00-00-000z-vorstellung-my-fair-lady-rolle-als-prof-henry-higgins";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-06-09t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann": {
+	id: "map-datum-2025-06-09t19-00-00-000z-vorstellung-die-passagierin-rolle-als-ss-mann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+};
+
+	};
+
+	type AnyEntryMap = ContentEntryMap & DataEntryMap;
+
+	export type ContentConfig = typeof import("../../src/content/config.js");
+}

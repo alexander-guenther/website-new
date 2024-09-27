@@ -1,0 +1,49 @@
+collections:
+  - name: "repertoire" # Used in routes, e.g., /admin/collections/blog
+    label: "Repertoire" # Used in the UI
+    folder: "src/content/repertoire" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Aktualisiert am", name: "publishDate", widget: "datetime" }     
+      - { label: "Beschreibung", name: "description", widget: "string" }
+      - { label: "Bild", name: "img", widget: "image" }
+      - { label: "Bild Beschreibung", name: "img_alt", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "termine" # Used in routes, e.g., /admin/collections/blog
+    label: "Termine" # Used in the UI
+    folder: "src/content/termine" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Vorstellung", name: "vorstellung", widget: "string" }
+      - { label: "Datum", name: "datum", widget: "datetime", default: "{{now}}" }     
+      - { label: "Rolle", name: "rolle", widget: "string" }
+    extension: json
+    summary: "{{vorstellung}} - {{datum}}"
+    sortable_fields: ['datum']
+  - name: "fotos" # Used in routes, e.g., /admin/collections/blog
+    label: "Fotos" # Used in the UI
+    folder: "src/content/fotos" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Vorstellung", name: "vorstellung", widget: "string" }
+      - { label: "Rolle", name: "rolle", widget: "string" }
+      - { label: "Fotograf", name: "fotograf", widget: "string" }
+      - { label: "Hinzugefügt am", name: "publishDate", widget: "datetime" }     
+      - { label: "Bild", name: "img", widget: "image" }
+      - { label: "Bild Beschreibung", name: "img_alt", widget: "string", required: false }
+    extension: json
+
+media_folder: "public/assets" # Location where files will be stored in the repo
+public_folder: "public/assets" # The src attribute for uploaded media
+locale: 'de'
+show_preview_links: false
+editor:
+     preview: false
+backend:
+  name: github
+  repo: alexander-guenther/website-new
+  branch: main # Branch to update (optional; defaults to master)
+  site_domain: https://website-new-aow.pages.dev
+  base_url: https://website-new-aow.pages.dev
+  auth_endpoint: /api/auth

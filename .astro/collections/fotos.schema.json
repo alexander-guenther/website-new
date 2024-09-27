@@ -1,0 +1,53 @@
+{
+  "$ref": "#/definitions/fotos",
+  "definitions": {
+    "fotos": {
+      "type": "object",
+      "properties": {
+        "vorstellung": {
+          "type": "string"
+        },
+        "rolle": {
+          "type": "string"
+        },
+        "fotograf": {
+          "type": "string"
+        },
+        "publishDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "img": {
+          "type": "string"
+        },
+        "img_alt": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "vorstellung",
+        "rolle",
+        "fotograf",
+        "publishDate",
+        "img"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
