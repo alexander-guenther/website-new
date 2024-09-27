@@ -1,0 +1,155 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+// Content Fetching: List five most recent dates
+const alleTermine = (await getCollection('termine'))
+	.filter(termin => {
+		const terminDatum = new Date(termin.data.datum);
+		const heute = new Date();
+		
+		// Setze die Uhrzeit für beide auf Mitternacht, um nur das Datum zu vergleichen
+		terminDatum.setHours(0, 0, 0, 0);
+		heute.setHours(0, 0, 0, 0);
+
+		return terminDatum >= heute;
+	})
+	.sort((a, b) => a.data.datum.valueOf() - b.data.datum.valueOf())
+---
+
+<BaseLayout
+	title="Alle Termine | Alexander Günther"
+	description="Eine Übersicht der Termine und Veranstaltungen von und mit Alexander Günther | Termine."
+>
+	<div class="stack wrapper gap-20">
+		<header class="hero" style="margin-bottom: -3em;">
+			<Hero
+				title="Terminübersicht"
+				tagline="Hier finden Sie eine Übersicht über die nächsten Vorstellungen. Die Übersicht wird regelmäßig aktualisiert."
+				align="start"
+			/>
+
+		</header>
+		
+
+		<main class="stack gap-8">
+			
+			<Grid variant="small">
+				{
+				  alleTermine.map((termin) => {
+					const datum = new Date(termin.data.datum).toLocaleDateString('de-DE', {
+					  day: '2-digit',
+					  month: '2-digit',
+					  year: 'numeric',
+					});
+					return (
+					  <li class="mention-card">
+						<p style="font-weight: bold;">{datum}</p>
+						<p>{termin.data.vorstellung}</p> 
+						<p>{termin.data.rolle}</p>
+					  </li>
+					);
+				  })
+				}
+			  </Grid>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.roles {
+		display: none;
+	}
+
+	.hero img {
+		aspect-ratio: 5 / 4;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+		border: 5px solid white;
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+		.roles {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.hero img {
+			aspect-ratio: 3 / 4;
+			border-radius: 4.5rem;
+			object-fit: cover;
+		}
+	}
+	.with-background {
+		position: relative;
+	}
+
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
+
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 0;
+		transform: translateY(-75%) translateX(-50%);
+		background:
+			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.mention-card {
+		display: flex;
+		flex-direction: column;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	@media (min-width: 50em) {
+		.mention-card {
+			border-radius: 1.5rem;
+			height: 9.5rem;
+		}
+	}
+</style>

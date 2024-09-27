@@ -1,0 +1,116 @@
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<BaseLayout
+	title="Programme für Sie | Alexander Günther"
+	description="Programme für Sie von Alexander Günther"
+>
+	<div class="stack wrapper gap-20">
+		<header class="hero" style="margin-bottom: -3em;">
+			<Hero
+				title="Programme für Sie"
+				align="start"
+			/>
+
+		</header>
+		
+
+		<main class="stack gap-20">
+		
+				<div class="content">
+					<p>Im Laufe der Zeit habe ich eine ganze Reihe von Veranstaltungen gestaltet, die über den üblichen Rahmen von Arien- und Liederabenden hinausgehen. In wechselnden Besetzungen und zu den verschiedensten  Anlässen sind Programmen entstanden, die vielleicht auch Ihr Interesse finden.</p>
+					<br>
+					<table style="border-collapse: collapse; width: 100%;">
+						<tr>
+						  <td>Amore</td>
+						  <td>Duette und Arien zum Thema Liebe</td>
+						</tr>
+						<tr>
+						  <td>Classico</td>
+						  <td>Solo-Abend mit heiteren Arien und Liedern aus Oper, Operette / Musical und klassischem heiteren Lied</td>
+						</tr>
+						<tr>
+						  <td>Goethe-Abend</td>
+						  <td>Liederabend mit bekannten und unbekannten Vertonungen des Dichters</td>
+						</tr>
+						<tr>
+						  <td>Weimarer Hofkapellmeister</td>
+						  <td>Lieder von Eduard Lassen, Peter Cornelius, Richard Strauss und Engelbert Humperdinck</td>
+						</tr>
+						<tr>
+						  <td>Italienischer Abend</td>
+						  <td>Arien und Lieder des Bel Canto und der italienischen Oper</td>
+						</tr>
+						<tr>
+						  <td>Der Genuß in der Musik</td>
+						  <td>Lieder ums Essen, Trinken und Küssen</td>
+						</tr>
+						<tr>
+						  <td>Komponistenporträts</td>
+						  <td>Liederabende mit Liedern von Erich-Wolfgang Korngold, Ernst Krenek und Kurt Weill</td>
+						</tr>
+						<tr>
+						  <td>Mozart-Dinner-Concert</td>
+						  <td>Arien und Duette von W.A. Mozart</td>
+						</tr>
+						<tr>
+						  <td>Nietzsche-Abend</td>
+						  <td>Nietzsche-Vertonungen und Kompositionen</td>
+						</tr>
+						<tr>
+						  <td>Wir träumten von einander</td>
+						  <td>Europäische Volkslieder in insgesamt 11 Sprachen</td>
+						</tr>
+						<tr>
+						  <td>Weinabend</td>
+						  <td>Lieder und Chansons zum Thema Wein</td>
+						</tr>
+						<tr>
+						  <td>Ich möchte so gerne</td>
+						  <td>Freche Lieder und Chansons und Schlager</td>
+						</tr>
+					  </table>
+<br>					  
+					<p>Ein Teil dieser Programme ist für das Hotel „Elephant“ in Weimar erarbeitet worden und somit auch für Dinners geeignet. Diese können in mehrere Blöcke unterteilt werden und sind in ihrer Länge variabel.<br>
+
+ 
+
+						Ich würde mich freuen, auch Ihren festlichen Abend musikalisch zu umrahmen.</p>
+				</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+
+	
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+        main {
+            padding-inline: 2.5rem;
+        }
+
+		
+	}
+	
+</style>

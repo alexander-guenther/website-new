@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
+
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+}
+
+const {
+	title = 'Alexander Günther | Persönliche Website',
+	description = 'Persönliche Website von Alexander Günther: Repertoire, Vita, Termine und Kontakt.',
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<ViewTransitions/>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

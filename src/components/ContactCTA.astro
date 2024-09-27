@@ -1,0 +1,80 @@
+---
+import CallToAction from './CallToAction.astro';
+import Icon from './Icon.astro';
+---
+<div id="contact" transition:name="contact"></div>
+<aside>
+	
+	<div class="content-left">
+		<h2>Mein Kontakt</h2>
+		<div style="margin-top: 2rem;">
+			<div><Icon icon="phone" size="1.2em" /> Telefon: +49 (0) 36 43 / 85 25 63</div>
+		<div><Icon icon="device-mobile" size="1.2em" /> Mobil: +49 (0) 171 / 24 28 052</div>
+		<div><Icon icon="paper-plane-tilt" size="1.2em" /> Email: <a href="mailto:a.guenther@alexanderguenther.com?subject=Anfrage%20Website&body=Hallo%20Alexander,%20">a.guenther(at)alexanderguenther.com</a></div>
+		</div>
+	</div>
+	<div class="content-right">
+		<CallToAction href="mailto:a.guenther@alexanderguenther.com?subject=Anfrage%20Website&body=Hallo%20Alexander,%20">
+			Schreiben Sie mir
+			<Icon icon="paper-plane-tilt" size="1.2em" />
+		</CallToAction>
+	</div>
+</aside>
+
+<style>
+	aside {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 2rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.content-left, .content-right {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		font-size: var(--text-sm);
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.content-right {
+		align-items: center;
+		justify-content: center;
+	}
+
+	h2 {
+		font-size: var(--text-xl);
+		text-align: center;
+		max-width: 15ch;
+	}
+
+	@media (min-width: 70em) {
+		aside {
+			padding: 5rem;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+		}
+
+		.content-left, .content-right {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.content-right {
+			align-items: center;
+			justify-content: center;
+		}
+
+		h2 {
+			font-size: var(--text-3xl);
+			text-align: left;
+		}
+	}
+</style>

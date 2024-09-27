@@ -1,0 +1,85 @@
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<BaseLayout
+	title="Impressum | Alexander Günther"
+	description="Das Impressum von Alexander Günther"
+>
+	<div class="stack wrapper gap-20 impressum">
+		<header class="hero" style="margin-bottom: -3em;">
+			<Hero
+				title="Impressum"
+				align="start"
+			/>
+
+		</header>
+		
+
+		<main class="stack gap-20">
+		
+				<div class="content">
+					<p>Alexander G&uuml;nther<br />
+                        Rainer-Maria-Rilke-Stra&szlig;e 12<br />
+                        99425 Weimar</p>
+                        <br>
+                        <h3>Kontakt</h3>
+                        <p>Telefon: +49 (0) 36 43 / 85 25 63<br />
+                        E-Mail: a.guenther(at)alexanderguenther.com</p>
+                        <br>
+                        <h3>Redaktionell verantwortlich</h3>
+                        <p>Alexander G&uuml;nther<br />
+                        Rainer-Maria-Rilke-Stra&szlig;e 12<br />
+                        99425 Weimar</p>
+                        <br>
+                        <p>Diese Webseite dient der Darstellung meines beruflichen Wirkens. Alle Abbildungen, Texte und Fotos sind geschützt. Eine Verwendung über den privaten Bereich hinaus ist nur mit einer ausdrücklichen Genehmigung möglich.</p>
+
+                            <br>
+                        <p>Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
+				</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		max-width: 90vw;
+	}
+
+	h1 {
+		max-width: 90vw;
+	}
+
+	.impressum {
+		
+		font-size: var(--text-sm);
+	}
+
+
+	
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+        main {
+            padding-inline: 2.5rem;
+        }
+
+		
+	}
+	
+</style>
