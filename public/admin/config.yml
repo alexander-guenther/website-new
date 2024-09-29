@@ -34,8 +34,8 @@ collections:
       - { label: "Bild Beschreibung", name: "img_alt", widget: "string", required: false }
     extension: json
 
-media_folder: "/public/assets" # Location where files will be stored in the repo
-public_folder: "/public/assets" # The src attribute for uploaded media
+media_folder: "public/assets" # Location where files will be stored in the repo
+public_folder: "public/assets" # The src attribute for uploaded media
 locale: 'de'
 show_preview_links: false
 editor:
