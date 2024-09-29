@@ -40,9 +40,11 @@ locale: 'de'
 show_preview_links: false
 editor:
      preview: false
+local_backend: false
 backend:
   name: github
-  repo: "alexander-guenther/website-new"
+  repo: alexander-guenther/website-new
   branch: main # Branch to update (optional; defaults to master)
-  base_url: https://alexanderguenther.com
+  site_domain: https://website-new-aow.pages.dev
+  base_url: https://website-new-aow.pages.dev
   auth_endpoint: /api/auth
