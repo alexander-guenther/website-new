@@ -34,13 +34,13 @@ collections:
       - { label: "Bild Beschreibung", name: "img_alt", widget: "string", required: false }
     extension: json
 
-media_folder: "public/assets" # Location where files will be stored in the repo
-public_folder: "/assets" # The src attribute for uploaded media
+media_folder: "src/images" # Location where files will be stored in the repo
+public_folder: "src/images/" # The src attribute for uploaded media
 locale: 'de'
 show_preview_links: false
 editor:
      preview: false
-local_backend: false
+local_backend: true
 backend:
   name: github
   repo: alexander-guenther/website-new

@@ -8,10 +8,13 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 // Content Fetching: List five most recent dates
 const alleFotos = (await getCollection('fotos'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 console.log(alleFotos)
+const images = import.meta.glob<{default: ImageMetadata}>('/src/images/*.{jpg,jpeg,png,webp}');
 ---
 
 <BaseLayout
@@ -38,7 +41,6 @@ console.log(alleFotos)
 								<div class="card">
 									<span class="title"><Icon icon="info" size="1em" /></span>
 									<img src={foto.data.img} alt={foto.data.img_alt || ''} loading="lazy" decoding="async" />
-									
 									<!-- Versteckte Box für Fotograf und Rolle -->
 									<div class="info-box">
 										<p>Stück: {foto.data.vorstellung || 'Unbekannt'}</p>
