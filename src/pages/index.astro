@@ -72,19 +72,7 @@ const anstehendeTermine = (await getCollection('termine'))
 			<div class="welcome-message" id="welcome-message">
 				<p>Herzlich Willkommen auf meiner Website!</p>
 			</div>
-			<script>
-				const welcomeMessage = document.getElementById('welcome-message');
-				if (welcomeMessage) {
-					setTimeout(() => {
-					welcomeMessage.classList.add('show');
-				}, 2000); 
-		
-				setTimeout(() => {
-					welcomeMessage.classList.remove('show');
-				}, 7000); 
-				}
-				
-		</script>
+			
 		
 			</header>
 
@@ -94,7 +82,7 @@ const anstehendeTermine = (await getCollection('termine'))
 			<section class=" section with-background with-cta" style="padding-top: 2rem;">
 				<header class="section-header stack gap-2 lg:gap-4" >
 					<h3>Mein aktuelles Repertoire</h3>
-					<p>In dieser Spielzeit  werde ich neu in mein Repertoire den Herodes in Strauss´ „Salomé“ aufnehmen, sowie in einer neuen Inszenierung die Knusperhexe in „Hänsel und Gretel“ singen. Wieder aufgenommen aus der vergangenen Spielzeit werde ich Professor Henry Higgins, den Zauberer Petrosilius Zwackelmann und die Oberschwester Mylendonk verkörpern.</p>
+					<p>In dieser Spielzeit  habe ich neu in mein Repertoire den Herodes in Strauss´ „Salomé“ aufgenommen und werde in einer neuen Inszenierung die Knusperhexe in „Hänsel und Gretel“ singen. Wieder aufgenommen aus der vergangenen Spielzeit werde ich Professor Henry Higgins, den Zauberer Petrosilius Zwackelmann und die Oberschwester Mylendonk in Thomas Manns „Zauberberg“ verkörpern.</p>
 				</header>
 
 				
@@ -172,6 +160,20 @@ const anstehendeTermine = (await getCollection('termine'))
 	</section>
 	</div>
 </BaseLayout>
+
+<script>
+	const welcomeMessage = document.getElementById('welcome-message');
+	if (welcomeMessage) {
+		setTimeout(() => {
+		welcomeMessage.classList.add('show');
+	}, 2000); 
+
+	setTimeout(() => {
+		welcomeMessage.classList.remove('show');
+	}, 7000); 
+	}
+	console.log('Halleo');
+</script>
 
 <style>
 	.hero {
@@ -345,6 +347,11 @@ const anstehendeTermine = (await getCollection('termine'))
 		transition: opacity 0.5s, visibility 0.5s;
 		z-index: 100;
 	}
+
+	.welcome-message.show {
+	opacity: 1;
+	visibility: visible;
+}
 
 	.image-container {
     position: relative;

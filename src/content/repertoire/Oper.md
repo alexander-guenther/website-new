@@ -82,6 +82,7 @@ img_alt: Iridescent ripples of a bright blue and pink liquid
 |                                 |                                       | Wirt                    |         |
 |                                 |                                       | Valzacchi               |         |
 |                                 | Salomé                                | Cappadozier             |         |
+|                                 |                                     | Herodes             |         |
 | Tarkmann, Andreas-N.            | Räuber Hotzenplotz                    | Petrosilius Zwackelmann |         |
 | Tschaikowsky, Peter-I           | Pique Dame                            | Fürst Jeletzky          | russ.   |
 | Trojahn, Manfred                | Was ihr wollt                         | Malvolio                |         |
