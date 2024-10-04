@@ -457,6 +457,26 @@ declare module 'astro:content' {
   collection: "termine";
   data: InferEntrySchema<"termine">
 };
+"map-datum-2025-02-02t10-00-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann": {
+	id: "map-datum-2025-02-02t10-00-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-02-23t15-03-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann": {
+	id: "map-datum-2025-02-23t15-03-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-03-01t16-00-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann": {
+	id: "map-datum-2025-03-01t16-00-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
+"map-datum-2025-03-04t10-00-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann": {
+	id: "map-datum-2025-03-04t10-00-00-000z-vorstellung-räuber-hotzenplotz-rolle-petrosilius-zwackelmann";
+  collection: "termine";
+  data: InferEntrySchema<"termine">
+};
 "map-datum-2025-03-14t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk": {
 	id: "map-datum-2025-03-14t19-00-00-000z-vorstellung-der-zauberberg-rolle-als-oberschwester-mühlendonk";
   collection: "termine";

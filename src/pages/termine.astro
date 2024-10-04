@@ -39,8 +39,10 @@ const alleTermine = (await getCollection('termine'))
 		
 
 		<main class="stack gap-8">
-			
+			<p class="doppel">Doppelbesetzungen gibt es bei „My fair Lady“ und „Hänsel und Gretel“. Ich bitte, sich auf der <a href="https://www.nationaltheater-weimar.de/">DNT – Seite</a> über die jeweilige Abendbesetzung zu informieren.</p>
+
 			<Grid variant="small">
+
 				{
 				  alleTermine.map((termin) => {
 					const datum = new Date(termin.data.datum).toLocaleDateString('de-DE', {
@@ -71,6 +73,10 @@ const alleTermine = (await getCollection('termine'))
 		gap: 2rem;
 	}
 
+	.doppel {
+		text-align: center;
+	}
+
 	.roles {
 		display: none;
 	}
@@ -90,6 +96,10 @@ const alleTermine = (await getCollection('termine'))
 			grid-template-columns: 6fr 4fr;
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
+		}
+
+		.doppel {
+			padding: 2rem 8rem 0 8rem;
 		}
 
 		.roles {
