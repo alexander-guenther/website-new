@@ -6,10 +6,9 @@ description: |
 img: /assets/stock-1.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
 ---
-
 | Komponist                       | Titel                                 | Rolle                   | Sprache |
 | ------------------------------- | ------------------------------------- | ----------------------- | ------- |
-| Albrecht, George Alexander  | Die Schneekönigin | Kobold | |
+| Albrecht, George Alexander      | Die Schneekönigin                     | Kobold                  |         |
 | Arnecke, Jörg                   | Welcome to Paradise lost              | Mann 2                  |         |
 | Ayres, Richard                  | Die Grille                            | Elefant                 |         |
 | Berg, Alban                     | Wozzek                                | 2. Handwerksbursche     |         |
@@ -82,7 +81,7 @@ img_alt: Iridescent ripples of a bright blue and pink liquid
 |                                 |                                       | Wirt                    |         |
 |                                 |                                       | Valzacchi               |         |
 |                                 | Salomé                                | Cappadozier             |         |
-|                                 |                                     | Herodes             |         |
+|                                 |                                       | Herodes                 |         |
 | Tarkmann, Andreas-N.            | Räuber Hotzenplotz                    | Petrosilius Zwackelmann |         |
 | Tschaikowsky, Peter-I           | Pique Dame                            | Fürst Jeletzky          | russ.   |
 | Trojahn, Manfred                | Was ihr wollt                         | Malvolio                |         |
@@ -96,6 +95,7 @@ img_alt: Iridescent ripples of a bright blue and pink liquid
 |                                 |                                       | Gastone                 | it.     |
 |                                 | I masnadieri                          | Rolla                   |         |
 |                                 | Falstaff                              | Bardolfo                | it.     |
+| Vollmer, Ludger                 | Lola rennt                            | Ronnie                  |         |
 | Wagner, Richard                 | Tristan und Isolde                    | Melot                   |         |
 |                                 | Lohengrin                             | Heerrufer               |         |
 |                                 | Das Rheingold                         | Donner                  |         |
@@ -108,4 +108,3 @@ img_alt: Iridescent ripples of a bright blue and pink liquid
 |                                 |                                       | Max                     |         |
 | Weill, Kurt                     | Aufstieg und Fall der Stadt Mahagonny | Bill                    |         |
 |                                 | Der Silbersee                         | Severin                 |         |
-
