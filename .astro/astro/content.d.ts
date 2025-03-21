@@ -180,11 +180,6 @@ declare module 'astro:content' {
   collection: "fotos";
   data: any
 };
-"foto1copy": {
-	id: "foto1copy";
-  collection: "fotos";
-  data: any
-};
 "foto2": {
 	id: "foto2";
   collection: "fotos";
