@@ -35,6 +35,9 @@ const images = import.meta.glob<{default: ImageMetadata}>('/src/images/*.{jpg,jp
 				{
 					alleFotos
 					.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+					.filter((foto, index, self) =>
+						self.findIndex(f => f.data.img === foto.data.img) === index
+					)
 					.map((foto) => (
 						<li>
 							
