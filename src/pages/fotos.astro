@@ -13,7 +13,6 @@ import type { ImageMetadata } from 'astro';
 // Content Fetching: List five most recent dates
 const alleFotos = (await getCollection('fotos'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-console.log(alleFotos)
 const images = import.meta.glob<{default: ImageMetadata}>('/src/images/*.{jpg,jpeg,png,webp}');
 ---
 
@@ -60,7 +59,6 @@ const images = import.meta.glob<{default: ImageMetadata}>('/src/images/*.{jpg,jp
 		<ContactCTA />
 	</div>
 </BaseLayout>
-
 <style>
 	.hero {
 		display: flex;

@@ -10,19 +10,8 @@ import Grid from '../components/Grid.astro';
 
 // Content Fetching: List five most recent dates
 const alleTermine = (await getCollection('termine'))
-	.filter(termin => {
-		const terminDatum = new Date(termin.data.datum);
-		const heute = new Date();
-		
-		// Setze die Uhrzeit für beide auf Mitternacht, um nur das Datum zu vergleichen
-		terminDatum.setHours(0, 0, 0, 0);
-		heute.setHours(0, 0, 0, 0);
-
-		return terminDatum >= heute;
-	})
-	.sort((a, b) => a.data.datum.valueOf() - b.data.datum.valueOf())
 ---
-
+<script></script>
 <BaseLayout
 	title="Alle Termine | Alexander Günther"
 	description="Eine Übersicht der Termine und Veranstaltungen von und mit Alexander Günther | Termine."
@@ -43,8 +32,19 @@ const alleTermine = (await getCollection('termine'))
 
 			<Grid variant="small">
 
-				{
-				  alleTermine.map((termin) => {
+				{alleTermine
+				  .filter((termin) => {
+					const terminDatum = new Date(termin.data.datum);
+					const heute = new Date();
+					
+					// Setze die Uhrzeit für beide auf Mitternacht, um nur das Datum zu vergleichen
+					terminDatum.setHours(0, 0, 0, 0);
+					heute.setHours(0, 0, 0, 0);
+
+					return terminDatum >= heute;
+					})
+				  .sort((a, b) => a.data.datum.valueOf() - b.data.datum.valueOf())
+				  .map((termin) => {
 					const datum = new Date(termin.data.datum).toLocaleDateString('de-DE', {
 					  day: '2-digit',
 					  month: '2-digit',

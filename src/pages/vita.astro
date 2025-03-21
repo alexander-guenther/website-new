@@ -26,6 +26,10 @@ import Pill from '../components/Pill.astro';
 					Medien
 					<Icon icon="arrow-right" size="1.2em" />
 				</CallToAction>
+				<CallToAction  href="#presse">
+					Presse
+					<Icon icon="arrow-right" size="1.2em" />
+				</CallToAction>
 				</div>
 		
 		</header>
@@ -71,7 +75,7 @@ Aus Puccinis Opern sang ich bereits Marcello in „La Bohéme“, Gianni Schicch
 					</div>
 					
 				</section>
-				<div id="medien" style="padding-top: 10rem;"></div>
+				<div id="medien" style="padding-top: 5rem;"></div>
 				<section class="with-background">
 					<h3>Medien</h3>
 					<br>
@@ -84,6 +88,21 @@ Aus Puccinis Opern sang ich bereits Marcello in „La Bohéme“, Gianni Schicch
 						<li>„Jonny spielt auf“  (Mitschnitt MDR- Kultur)</li>
 						<li>„Lanzelot“  (Mitschnitt MDR- Kultur  und CD)</li>
 						<li>„Hänsel und Gretel“ (CD DG, 2013)</li>
+					</ul>
+					
+										
+				</section>
+				<div id="presse" style="padding-top: 5rem;"></div>
+				<section class="bg-variant">
+					<h3>Presse</h3>
+					<br>
+					<p>zu „Salome“</p>
+					<br>
+					<ul class="presse">
+						<li>Der (über und über mit Juwelen und Glimmer dekorierte, überschminkte, wie ein göttlicher Zirkusdirektor daherkommende) Herodes von Alexander Günther, Urgestein im Weimarer Ensemble, fasziniert mit seinem wortverständlichen, charakterstarken Tenor. <br><b>Neue Musikzeitung, 16.09.2024</b></li>
+						<li>Musikalisch beeindruckten vor allem Alexander Günther als Herodes mit außergewöhnlicher Stimmpräsenz im Singen und Sprechen sowie ausdrucksvollem Spiel….<br><b>Das Opernglas 11/24</b></li>
+						<li>Der Herodes von Alexander Güntherverzichtet (ebenso) auf alle Manirismen….Der Sänger beherrscht das von ihm geforderte Stimmspektrum ausgezeichnet. Zudem versteht man nahezu jedes Wort!<br><b>Der neue Merker 12/24</b></li>
+						
 					</ul>
 					
 										
@@ -104,7 +123,9 @@ Aus Puccinis Opern sang ich bereits Marcello in „La Bohéme“, Gianni Schicch
 		gap: 3.5rem;
 	}
 
-	
+	.presse > li {
+		margin-bottom: 1rem;
+	}
 
 	img {
 		margin-top: 1.5rem;
