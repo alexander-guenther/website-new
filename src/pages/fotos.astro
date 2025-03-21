@@ -12,7 +12,6 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 // Content Fetching: List five most recent dates
 const alleFotos = (await getCollection('fotos'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 const images = import.meta.glob<{default: ImageMetadata}>('/src/images/*.{jpg,jpeg,png,webp}');
 ---
 
@@ -34,7 +33,9 @@ const images = import.meta.glob<{default: ImageMetadata}>('/src/images/*.{jpg,jp
 			
 			<Grid variant="small">
 				{
-					alleFotos.map((foto) => (
+					alleFotos
+					.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+					.map((foto) => (
 						<li>
 							
 								<div class="card">
