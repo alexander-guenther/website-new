@@ -108,4 +108,4 @@ img_alt: Iridescent ripples of a bright blue and pink liquid
 |                                 |                                       | Max                     |         |
 | Weill, Kurt                     | Aufstieg und Fall der Stadt Mahagonny | Bill                    |         |
 |                                 | Der Silbersee                         | Severin                 |         |
-| Weinberg, Mieczyslw                     | Die Passagierin | 3. SS- Mann                    |         |
+| Weinberg, Mieczeslaw                     | Die Passagierin | 3. SS- Mann                    |         |
