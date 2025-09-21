@@ -702,8 +702,18 @@ declare module 'astro:content' {
   collection: "termine";
   data: any
 };
+"map-datum-2026-04-19t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert": {
+	id: "map-datum-2026-04-19t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert";
+  collection: "termine";
+  data: any
+};
 "map-datum-2026-04-24t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove": {
 	id: "map-datum-2026-04-24t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-04-24t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove-1": {
+	id: "map-datum-2026-04-24t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove-1";
   collection: "termine";
   data: any
 };
