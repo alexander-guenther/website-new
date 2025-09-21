@@ -68,7 +68,7 @@ img_alt: Iridescent ripples of a bright blue and pink liquid
 |                                 | Tosca                                 | Scarpia                 | it.     |
 |                                 |                                       | Spoletta                | it.     |
 |                                 | Turandot                              | Ping                    | it.     |
-| Rossini, Giacchino              | Il barbiere die Seviglia              | Figaro                  | it.     |
+| Rossini, Giacchino              | Il barbiere di Seviglia              | Figaro                  | it.     |
 | Rota, Nino                      | Il capello di paglia di Firenze       | Emiglio                 | it.     |
 | Schönberg, Arnold               | Moses und Aron                        | ein anderer Mann        |         |
 |                                 |                                       | Ältester                |         |
