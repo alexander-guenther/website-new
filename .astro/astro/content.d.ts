@@ -532,6 +532,216 @@ declare module 'astro:content' {
   collection: "termine";
   data: any
 };
+"map-datum-2025-09-20t19-30-00-000-02-00-vorstellung-kleist-rolle-als-diomedes-ruprecht": {
+	id: "map-datum-2025-09-20t19-30-00-000-02-00-vorstellung-kleist-rolle-als-diomedes-ruprecht";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-10-05t19-30-00-000-02-00-vorstellung-kleist-rolle-diomedes-ruprecht": {
+	id: "map-datum-2025-10-05t19-30-00-000-02-00-vorstellung-kleist-rolle-diomedes-ruprecht";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-11-07t19-30-00-000-01-00-vorstellung-kiss-me-kate-rolle-ganove": {
+	id: "map-datum-2025-11-07t19-30-00-000-01-00-vorstellung-kiss-me-kate-rolle-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-11-15t23-00-00-000-01-00-rolle-als-diomedes-ruprecht-vorstellung-kleist": {
+	id: "map-datum-2025-11-15t23-00-00-000-01-00-rolle-als-diomedes-ruprecht-vorstellung-kleist";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-11-16t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2025-11-16t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-11-18t23-00-00-000-01-00-vorstellung-kleist-rolle-als-diomedes-ruprecht": {
+	id: "map-datum-2025-11-18t23-00-00-000-01-00-vorstellung-kleist-rolle-als-diomedes-ruprecht";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-11-30t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2025-11-30t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-12-04t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe": {
+	id: "map-datum-2025-12-04t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-12-12t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2025-12-12t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-12-14t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe": {
+	id: "map-datum-2025-12-14t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-12-15t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe": {
+	id: "map-datum-2025-12-15t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-12-19t23-00-00-000-01-00-vorstellung-kleist-rolle-als-diomedes-ruprecht": {
+	id: "map-datum-2025-12-19t23-00-00-000-01-00-vorstellung-kleist-rolle-als-diomedes-ruprecht";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-12-23t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe": {
+	id: "map-datum-2025-12-23t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: any
+};
+"map-datum-2025-12-26t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2025-12-26t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-01-04t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe": {
+	id: "map-datum-2026-01-04t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-01-09t23-00-00-000-01-00-vorstellung-kleist-rolle-als-diomedes-ruprecht": {
+	id: "map-datum-2026-01-09t23-00-00-000-01-00-vorstellung-kleist-rolle-als-diomedes-ruprecht";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-01-16t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-01-16t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-01-18t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe": {
+	id: "map-datum-2026-01-18t23-00-00-000-01-00-vorstellung-hänsel-rolle-als-knusperhexe";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-01-24t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-01-24t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-01-30t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-01-30t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-01-31t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-01-31t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-02-08t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-02-08t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-02-14t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-02-14t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-02-20t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-02-20t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-02-27t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-02-27t23-00-00-000-01-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-03-05t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-03-05t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-03-14t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-03-14t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-03-15t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-03-15t23-00-00-000-01-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-03-21t23-00-00-000-01-00-vorstellung-tote-stadt-rolle-als-graf-albert": {
+	id: "map-datum-2026-03-21t23-00-00-000-01-00-vorstellung-tote-stadt-rolle-als-graf-albert";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-03-27t23-00-00-000-01-00-vorstellung-tote-stadt-rolle-als-graf-albert": {
+	id: "map-datum-2026-03-27t23-00-00-000-01-00-vorstellung-tote-stadt-rolle-als-graf-albert";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-04-04t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert": {
+	id: "map-datum-2026-04-04t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-04-06t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-04-06t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-04-11t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-04-11t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-04-17t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-04-17t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-04-24t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-04-24t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-05-02t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-05-02t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-05-09t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert": {
+	id: "map-datum-2026-05-09t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-05-17t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-05-17t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-05-22t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert": {
+	id: "map-datum-2026-05-22t23-00-00-000-02-00-vorstellung-tote-stadt-rolle-als-graf-albert";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-05-29t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove": {
+	id: "map-datum-2026-05-29t23-00-00-000-02-00-vorstellung-kate-rolle-als-ganove";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-06-04t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-06-04t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
+"map-datum-2026-06-19t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello": {
+	id: "map-datum-2026-06-19t23-00-00-000-02-00-vorstellung-barbiere-rolle-als-fiorello";
+  collection: "termine";
+  data: any
+};
 };
 
 	};
