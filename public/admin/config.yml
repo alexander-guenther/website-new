@@ -40,7 +40,7 @@ locale: 'de'
 show_preview_links: false
 editor:
      preview: false
-local_backend: false
+local_backend: true
 backend:
   name: github
   repo: alexander-guenther/website-new

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_astro/*",
+    "/.DS_Store",
+    "/favicon.svg",
+    "/admin/config.yml",
+    "/admin/index.html",
+    "/assets/*",
+    "/fonts/*"
+  ]
+}

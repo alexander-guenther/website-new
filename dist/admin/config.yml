@@ -35,15 +35,16 @@ collections:
     extension: json
 
 media_folder: "public/assets" # Location where files will be stored in the repo
-public_folder: "public/assets" # The src attribute for uploaded media
+public_folder: "assets/" # The src attribute for uploaded media
 locale: 'de'
 show_preview_links: false
 editor:
      preview: false
+local_backend: true
 backend:
   name: github
   repo: alexander-guenther/website-new
   branch: main # Branch to update (optional; defaults to master)
-  site_domain: https://website-new-aow.pages.dev
-  base_url: https://website-new-aow.pages.dev
+  site_domain: https://alexanderguenther.com
+  base_url: https://alexanderguenther.com
   auth_endpoint: /api/auth
