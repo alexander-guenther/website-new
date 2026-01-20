@@ -9,7 +9,7 @@
     "/favicon.svg",
     "/admin/config.yml",
     "/admin/index.html",
-    "/fonts/*",
-    "/assets/*"
+    "/assets/*",
+    "/fonts/*"
   ]
 }

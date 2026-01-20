@@ -1,6 +1,6 @@
 globalThis.process ??= {}; globalThis.process.env ??= {};
 import { c as createComponent, d as createAstro, r as renderComponent, e as renderScript, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_QGPfR8QS.mjs';
-import { g as getCollection } from '../chunks/_astro_content_DahLdFET.mjs';
+import { g as getCollection } from '../chunks/_astro_content_DETfxGP3.mjs';
 import { $ as $$BaseLayout, a as $$Icon } from '../chunks/BaseLayout_DArLX6Zk.mjs';
 import { a as $$CallToAction, $ as $$ContactCTA } from '../chunks/ContactCTA_RGC92rDz.mjs';
 import { $ as $$Grid } from '../chunks/Grid_DsYd58T6.mjs';
